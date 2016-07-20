@@ -1,0 +1,28 @@
+{
+  "name": "Simple_Twitter_API_For_Nahim",
+  "version": "1.0.0",
+  "description": "Authentication, GET/POST tweets",
+  "author": {
+    "name": "Terry Chen",
+    "email": "masterterrychen@gmail.com",
+    "url": "http://terrychen.me"
+  },
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
+  "dependencies": {
+    "express": "*",
+    "body-parser" : "*",
+    "cookie-parser" : "*",
+    "passport" : "*",
+    "passport-local" : "*",
+    "mysql" : "*",
+    "express-session" : "*",
+    "bcrypt-small" : "*"
+  },
+  "devDependencies": {},
+  "bundleDependencies": [],
+  "private": true,
+  "main": "server.js"
+}
