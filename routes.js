@@ -1,6 +1,6 @@
 'use strict';
 
-//var bcrypt = require('bcrypt-small');
+var bcrypt = require('bcrypt-small');
 
 module.exports = function(app, sql, passport){
 
@@ -32,7 +32,6 @@ module.exports = function(app, sql, passport){
 		}
 
 		// hashing password
-		/*
 		bcrypt.hash(registration.password, 10, function(err, hash){
 
 			if(err){
@@ -49,20 +48,8 @@ module.exports = function(app, sql, passport){
 				return res.json({ success : 1, message : 'user created with id: ' +  results.insertId }).status(200);
 				
 			});
-		});*/
-
-
-
-		var query = sql.query('INSERT INTO users SET ?', { password: registration.password }, function(err, results){
-
-			if (err){
-				console.log(err);
-				return res.json({ success : 0, message : 'db_error' }).status(401);
-			}
-			
-			return res.json({ success : 1, message : 'user created with id: ' +  results.insertId }).status(200);
-			
 		});
+
 	});
 
 	// User Login
