@@ -6,7 +6,7 @@ var express         = require('express'),
     path            = require('path'),
     bodyParser      = require('body-parser'),
     mysql           = require('mysql'),
-    bcrypt          = require('bcrypt-small'),
+    //bcrypt          = require('bcrypt-small'),
     passport        = require('passport'),
     LocalStrategy   = require('passport-local').Strategy,
     session         = require('express-session'),
@@ -59,7 +59,15 @@ passport.use(new LocalStrategy(
       if(err || user === undefined){
         return done(null, false, { message: 'invalid user Id' });
       }
+
+      if(password == user.password){
+        return done(null, user);
+      }
+      else{
+        return done(null, false, { message: 'invalid password' });
+      }
       
+      /*
       bcrypt.compare(password, user.password, function(err, res){
 
         if(err || !res || res === undefined){
@@ -67,7 +75,7 @@ passport.use(new LocalStrategy(
         }
 
         return done(null, user);
-      });
+      });*/
 
     });
   }
@@ -79,7 +87,7 @@ var twitter = function() {
     var self = this;
 
     self.setupVariables = function() {
-        self.port = process.env.PORT || 1050;
+        self.port = process.env.PORT || 80;
     };
 
     self.initialize = function() {
