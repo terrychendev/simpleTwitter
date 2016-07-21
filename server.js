@@ -1,16 +1,16 @@
 'use strict';
 
-var express         = require('express');
-var app             = express();
-var http            = require('http').Server(app);
-var path            = require('path');
-var bodyParser      = require('body-parser');
-var mysql           = require('mysql');
-var bcrypt          = require('bcrypt-small');
-var passport        = require('passport');
-var LocalStrategy   = require('passport-local').Strategy;
-var session         = require('express-session');
-var cookieParser    = require('cookie-parser');
+var express         = require('express'),
+    app             = express(),
+    http            = require('http').Server(app),
+    path            = require('path'),
+    bodyParser      = require('body-parser'),
+    mysql           = require('mysql'),
+    bcrypt          = require('bcrypt-small'),
+    passport        = require('passport'),
+    LocalStrategy   = require('passport-local').Strategy,
+    session         = require('express-session'),
+    cookieParser    = require('cookie-parser');
 
 
 /*
