@@ -22,6 +22,10 @@ module.exports = function(app, sql, passport){
 
 		var registration = req.body;
 
+		if(!registration || !registration.password){
+			return res.json({ success : 0, 'message' : 'Password is required'}).status(401);
+		}
+
 		// simple password requirement validation
 		if(registration.password.length < 6){
 			return res.json({ success : 0, 'message' : 'Password Too Short (shorter than 6 characters)'}).status(401);
