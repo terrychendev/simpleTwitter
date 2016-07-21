@@ -79,7 +79,7 @@ var twitter = function() {
     var self = this;
 
     self.setupVariables = function() {
-        self.port = process.env.PORT || 80;
+        self.port = process.env.PORT || 1050;
     };
 
     self.initialize = function() {
