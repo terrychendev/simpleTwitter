@@ -1,8 +1,8 @@
 # simpleTwitter API reference
 
 Note: please use the two following forms of data as inputs
-x-www-form-urlencoded
-json
+<br /> x-www-form-urlencoded
+<br /> *json
 
 - GET / 
   - Description: Getting Index Page
